@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Quantum Key Distribution (BB84)</title>
-        <link rel="stylesheet" href="public/style.css">
+        <link rel="stylesheet" href="./public/style.css">
         <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </head>
@@ -95,9 +95,9 @@
             
     
         <!-- module for running pixiJS simulation -->
-        <script type="module" src="src/main.js"></script>
+        <script type="module" src="./src/main.js"></script>
         <script type="module">
-            import { sendPhotonHandler, shotsHandler, contShotsHandler, stopShotsHandler, setPhotonSpeed, eveToggleHandler, compareBitsHandler, clearHandler } from 'src/main.js';
+            import { sendPhotonHandler, shotsHandler, contShotsHandler, stopShotsHandler, setPhotonSpeed, eveToggleHandler, compareBitsHandler, clearHandler } from './src/main.js';
 
             // Attach the function to the button
             $('#btnSinglePhoton').click(sendPhotonHandler);
