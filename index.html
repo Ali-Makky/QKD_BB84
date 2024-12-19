@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quantum Key Distribution (BB84)</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <script type="module" crossorigin src="/QKD_BB84/assets/index-p7VBvNxk.js"></script>
+      <link rel="stylesheet" crossorigin href="/QKD_BB84/assets/index-CZv06_z_.css">
+    </head>
+    <body>
+        <div class="container">
+            <h1 style="text-align: center;">QKD BB84 simulator</h1>
+            <div class="flex-row">
+                <!-- Main Controls -->
+                <div class="main-controls card">
+                    <h3>Main controls</h3>
+                    <button id="btnSinglePhoton">Single photon</button>
+                    <button id="btnContShots">Continuous</button>
+                    <button id="btnStopShots">Stop</button>
+                    <div class="fast-forward-container">
+                        <button id="btnShots" style="margin-right: 5px;">Send N photons</button>
+                        <span>N = </span>
+                        <input type="number" id="nPhotons" min="1" max="1000" value="1" class="photon-input" />
+                    </div>
+                    
+                    <button class="clear-btn">Clear measurements</button>
+                    <input type="checkbox" id="btnEve" />
+                    <label for="btnEve" style="color: red;"><strong>Eavesdrop!</strong></label>
+                    <div>
+                        <h4>Speed Control
+                            <div class="value-display">
+                                <span id="speedValue">3</span>
+                            </div>
+                        </h4>
+                        <div class="slider-container">
+                          <input type="range" min="0" max="100" value="3" class="slider" id="speedSlider">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="simulation" style="width: 100%; height: 350px; border: 1px solid #333; flex:2;">
+                    <!-- PixiJS Canvas will be inserted here -->
+                </div>
+            </div>
+            
+            <!-- The Table -->
+            <div class="table-container">
+                <table id="data-table">
+                    <thead>
+                        <tr class="header-row">
+                          <th colspan="2" class="multi-header">Alice</th>
+                          <th colspan="2" class="multi-header">Eve</th>
+                          <th colspan="2" class="multi-header">Bob</th>
+                          <th class="multi-header">Alice and Bob</th>
+                        </tr>
+                        <tr class="header-row">
+                          <th>Basis</th>
+                          <th>Bit</th>
+                          <th>Basis</th>
+                          <th>Measured</th>
+                          <th>Basis</th>
+                          <th>Measured</th>
+                          <th>Same bases?</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body-experiment">
+                        
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Result and stat -->
+            <div class="flex-row">                
+                <!-- Errors Section -->
+                <div class="errors card" style="flex:1; margin-bottom:10px">
+                    <h3>Statistics</h3>
+                    <p>Total: N<sub>tot</sub> = <span id="total-bits"></span> </p>
+                    <p>Key bits: N<sub>key</sub> = <span id="correct-bases"></span> </p>
+                    <p>Errors: N<sub>err</sub> = <span id="error-bits"></span> </p>
+                    <p>Probability: N<sub>err</sub> / N<sub>key</sub> = <span id="prob"></span> </p>
+                </div>
+                
+                <!-- Key Bits Section -->
+                <div class="key-bits card" style="flex:3; margin-bottom:10px">
+                    <h3>Candidate key bits (same bases)</h3>
+                    <p><strong>Alice:</strong> <span id="alice_bits"></span> </p>
+                    <p><strong>Bob  :</strong> <span id="bob_bits"></span> </p>
+                    <button id="btnCompareBits">Let Alice & Bob compare 25 bits</button>
+                    <p>Alice & Bob need 25 bits for error checking</p>
+                </div>
+            </div>
+        </div>
+
+            
+    
+        <!-- module for running pixiJS simulation -->
+    </body>
+</html>
