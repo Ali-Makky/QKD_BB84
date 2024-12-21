@@ -30,15 +30,15 @@ async function preload()
 {
     // Create an array of asset data to load.
     const assets = [
-        { alias: 'ket0', src: '../QKD_BB84/img/ket0.svg'},
-        { alias: 'ket1', src: '../QKD_BB84/img/ket1.svg'},
-        { alias: 'ket+', src: '../QKD_BB84/img/ket+.svg'},
-        { alias: 'ket-', src: '../QKD_BB84/img/ket-.svg'},
-        { alias: 'X', src: '../QKD_BB84/img/x.svg'},
-        { alias: 'Z', src: '../QKD_BB84/img/z.svg'},
-        { alias: 'alice', src: '../QKD_BB84/img/alice.svg'},
-        { alias: 'bob', src: '../QKD_BB84/img/bob.svg'},
-        { alias: 'eve', src: '../QKD_BB84/img/eve.png'},
+        { alias: 'ket0', src: './img/ket0.svg'},
+        { alias: 'ket1', src: './img/ket1.svg'},
+        { alias: 'ket+', src: './img/ket+.svg'},
+        { alias: 'ket-', src: './img/ket-.svg'},
+        { alias: 'X', src: './img/x.svg'},
+        { alias: 'Z', src: './img/z.svg'},
+        { alias: 'alice', src: './img/alice.svg'},
+        { alias: 'bob', src: './img/bob.svg'},
+        { alias: 'eve', src: './img/eve.png'},
     ];
     
     // Load the assets defined above.

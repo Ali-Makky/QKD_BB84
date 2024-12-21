@@ -1,8 +1,6 @@
 
 import { Sprite } from 'pixi.js';
 
-// Reference to the alice and bob.
-let alice, bob;
 
 export function addBases(app)
 {
@@ -18,10 +16,7 @@ export function addBases(app)
      xBasis.x = app.screen.width/8;
      xBasis.y = app.screen.height/2;
      zBasis.scale.set(0.25);
-    //  xBasis.position.set(app.screen.width/10, app.screen.heigt/10);
-    //  zBasis.tilePosition(app.screen.width/2);
      app.stage.addChild(xBasis);
-    // app.stage.addChild(zBasis);
 }
 
 export function animateWaterOverlay(app, time)
@@ -33,9 +28,3 @@ export function animateWaterOverlay(app, time)
     overlay.tilePosition.x -= delta;
     overlay.tilePosition.y -= delta;
 }
-
-
-// inner funtions
-// function 
-
-

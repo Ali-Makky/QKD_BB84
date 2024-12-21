@@ -1,4 +1,4 @@
-import { Container, Sprite } from 'pixi.js';
+import { Sprite } from 'pixi.js';
 import { do_an_experiment } from '../bb84/experiment';
 import { addPolarizer } from './addPolarizor'
 
@@ -53,8 +53,6 @@ const movePhoton = (app, alice_photon, eve_photon, alice, bob, eve, withEve, pol
 
 
 
-
-
     app.stage.addChild(alice_photon);
 
 
@@ -69,14 +67,8 @@ const movePhoton = (app, alice_photon, eve_photon, alice, bob, eve, withEve, pol
                 // Remove the ticker callback
                 app.ticker.remove(updatePosition2);
                 app.stage.removeChild(p);
-                // app.stage.removeChild(polarizers[0]); // alice polarizer
                 app.stage.removeChild(polarizers[1]); // bob polarizer
-                // app.stage.removeChild(polarizers[2]); // eve polarizer1
                 app.stage.removeChild(polarizers[3]); // eve polarizer2
-
-                // // Create the ticker callback (eve --> bob)
-                // const updatePosition2 = createTickerCallback2(eve_photon, bob, eve);
-                // app.ticker.add(updatePosition);
             }
         };
     };
@@ -103,9 +95,7 @@ const movePhoton = (app, alice_photon, eve_photon, alice, bob, eve, withEve, pol
                     app.ticker.remove(updatePosition);
                     app.stage.removeChild(p);
                     app.stage.removeChild(polarizers[0]); // alice polarizer
-                    // app.stage.removeChild(polarizers[1]); // bob polarizer
                     app.stage.removeChild(polarizers[2]); // eve polarizer1
-                    // app.stage.removeChild(polarizers[3]); // eve polarizer2
 
                     // Create the ticker callback (eve --> bob)
                     app.stage.addChild(eve_photon);

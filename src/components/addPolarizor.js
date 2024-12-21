@@ -1,4 +1,4 @@
-import { Container, Sprite } from 'pixi.js';
+import { Sprite } from 'pixi.js';
 
 let alice_basis, bob_basis, eve_basis1, eve_basis2;
 export const addPolarizer = (app, alice, bob, eve, withEve, basisA, basisB, basisE)=>
