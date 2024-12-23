@@ -3,7 +3,8 @@ import { populateRow } from "./populateResults";
 import { colorKeyBits } from "./colorKeys";
 import { sendPhoton } from './addPhoton';
 import { redraw } from "./addSprites";
-import { app, eve, eveText, speed, alice_key, bob_key, withEve, stopped, setSpeed, total_sent_photon, key_bits, error_bits, setTotalSentPhoton, setKeyBits, setErrorBits, setWithEve, setStopped, setAliceKey, setBobKey } from "../main";
+import { app, speed, alice_key, bob_key, withEve, stopped, setSpeed, total_sent_photon, key_bits, error_bits, setTotalSentPhoton, setKeyBits, setErrorBits, setWithEve, setStopped, setAliceKey, setBobKey } from "../main";
+import { eve, eveText } from "./initSprites.js";
 
 
 
