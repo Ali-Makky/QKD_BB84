@@ -1,4 +1,5 @@
-import { app, alice, bob, eve, aliceText, bobText, eveText, withEve } from "../main.js";
+import { alice, bob, eve, aliceText, bobText, eveText } from "./initSprites.js";
+import { app, withEve } from "../main.js";
 
 
 export const addPeople = ()=>

@@ -1,5 +1,7 @@
 import { Sprite } from 'pixi.js';
-import { app, alice, bob, eve } from "../main";
+import { app } from "../main";
+import { alice, bob, eve } from "./initSprites.js";
+
 
 let alice_basis, bob_basis, eve_basis1, eve_basis2;
 export const addPolarizer = (basisA, basisB, basisE, withEve)=>

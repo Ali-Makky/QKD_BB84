@@ -1,7 +1,8 @@
 import { Sprite } from 'pixi.js';
 import { do_an_experiment } from '../backend/experiment';
 import { addPolarizer } from './addPolarizor';
-import { app, alice, bob, eve, speed } from "../main";
+import { app, speed } from "../main";
+import { alice, bob, eve } from "./initSprites.js";
 
 
 
