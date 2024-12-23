@@ -39,7 +39,7 @@
                     </div>
                 </div>
 
-                <div id="simulation" style="width: 100%; height: 350px; border: 1px solid #333; flex:2;">
+                <div id="simulation" style="width: 100%; height: 350px; border: 1px solid #333;">
                     <!-- PixiJS Canvas will be inserted here -->
                 </div>
             </div>
@@ -97,7 +97,7 @@
         <!-- module for running pixiJS simulation -->
         <script type="module" src="./src/main.js"></script>
         <script type="module">
-            import { sendPhotonHandler, shotsHandler, contShotsHandler, stopShotsHandler, setPhotonSpeed, eveToggleHandler, compareBitsHandler, clearHandler } from './src/main.js';
+            import { sendPhotonHandler, shotsHandler, contShotsHandler, stopShotsHandler, setPhotonSpeed, eveToggleHandler, compareBitsHandler, clearHandler } from './src/frontend/handlers.js';
 
             // Attach the function to the button
             $('#btnSinglePhoton').click(sendPhotonHandler);

@@ -1,9 +1,11 @@
-import { Container, Sprite } from 'pixi.js';
-import { do_an_experiment } from '../bb84/experiment';
-import { addPolarizer } from './addPolarizor'
+import { Sprite } from 'pixi.js';
+import { do_an_experiment } from '../backend/experiment';
+import { addPolarizer } from './addPolarizor';
+import { app, alice, bob, eve, speed } from "../main";
 
 
-export async function sendPhoton(app, alice, bob, eve, withEve, alice_key, bob_key, speed)
+
+export async function sendPhoton(alice_key, bob_key, withEve)
 {
 
     const result = do_an_experiment(withEve);
@@ -15,7 +17,7 @@ export async function sendPhoton(app, alice, bob, eve, withEve, alice_key, bob_k
         }
     
     //add polarizors to the stage
-    const polarizers = addPolarizer(app, alice, bob, eve, withEve, result['basisA'], result['basisB'], result['basisE']);
+    const polarizers = addPolarizer(result['basisA'], result['basisB'], result['basisE'], withEve);
         
     
     const alice_photon = getKet(result['aliceQubit']);
@@ -23,13 +25,13 @@ export async function sendPhoton(app, alice, bob, eve, withEve, alice_key, bob_k
     if(withEve){
         eve_photon = getKet(result['eveQubit']);
     }
-    movePhoton(app, alice_photon, eve_photon, alice, bob, eve, withEve, polarizers, speed);
+    movePhoton(alice_photon, eve_photon, polarizers, withEve);
     
     return result; // experiment data
 }
 
 
-const movePhoton = (app, alice_photon, eve_photon, alice, bob, eve, withEve, polarizers, speed) => 
+const movePhoton = (alice_photon, eve_photon, polarizers, withEve) => 
 {
     // Center the sprite anchor.
     alice_photon.anchor.set(0.5);
@@ -53,8 +55,6 @@ const movePhoton = (app, alice_photon, eve_photon, alice, bob, eve, withEve, pol
 
 
 
-
-
     app.stage.addChild(alice_photon);
 
 
@@ -65,18 +65,12 @@ const movePhoton = (app, alice_photon, eve_photon, alice, bob, eve, withEve, pol
             p.x += Math.sin(p.direction) * p.speed;
 
             if (p.x >= bob.x-50) { // bob polarizer position
-                console.log("p.x > bob.x", p.x);
+                // console.log("p.x > bob.x", p.x);
                 // Remove the ticker callback
                 app.ticker.remove(updatePosition2);
                 app.stage.removeChild(p);
-                // app.stage.removeChild(polarizers[0]); // alice polarizer
                 app.stage.removeChild(polarizers[1]); // bob polarizer
-                // app.stage.removeChild(polarizers[2]); // eve polarizer1
                 app.stage.removeChild(polarizers[3]); // eve polarizer2
-
-                // // Create the ticker callback (eve --> bob)
-                // const updatePosition2 = createTickerCallback2(eve_photon, bob, eve);
-                // app.ticker.add(updatePosition);
             }
         };
     };
@@ -87,9 +81,8 @@ const movePhoton = (app, alice_photon, eve_photon, alice, bob, eve, withEve, pol
             p.x += Math.sin(p.direction) * p.speed;
 
             if(!withEve) {
-
                 if (p.x >= bob.x-50) { // bob polarizer position
-                    console.log("p.x > bob.x", p.x);
+                    // console.log("p.x > bob.x", p.x);
                     // Remove the ticker callback
                     app.ticker.remove(updatePosition);
                     app.stage.removeChild(p);
@@ -98,14 +91,12 @@ const movePhoton = (app, alice_photon, eve_photon, alice, bob, eve, withEve, pol
                 }
             } else {
                 if (p.x >= eve.x-50) { // bob polarizer position
-                    console.log("p.x > eve.x", p.x);
+                    // console.log("p.x > eve.x", p.x);
                     // Remove the ticker callback
                     app.ticker.remove(updatePosition);
                     app.stage.removeChild(p);
                     app.stage.removeChild(polarizers[0]); // alice polarizer
-                    // app.stage.removeChild(polarizers[1]); // bob polarizer
                     app.stage.removeChild(polarizers[2]); // eve polarizer1
-                    // app.stage.removeChild(polarizers[3]); // eve polarizer2
 
                     // Create the ticker callback (eve --> bob)
                     app.stage.addChild(eve_photon);
@@ -122,6 +113,4 @@ const movePhoton = (app, alice_photon, eve_photon, alice, bob, eve, withEve, pol
 }
 
 
-function getKet(qubit) {
-    return Sprite.from(qubit);
-}
+const getKet = (qubit)=> Sprite.from(qubit);
