@@ -20,6 +20,8 @@
 This simulator was built as project for [COE466](https://faculty.kfupm.edu.sa/COE/mfelemban/COE466/241/index.html) course at KFUPM.
 It provides a simulation of the [BB84](https://en.wikipedia.org/wiki/BB84#:~:text=BB84%20is%20a%20quantum%20key,the%20first%20quantum%20cryptography%20protocol.) QKD protocol, which is a foundational quantum cryptography method for securely distributing encryption keys between two parties. The simulator demonstrates the principles of quantum key distribution and allows users to explore the mechanics of the BB84 protocol.
 
+#### Go & Try it!
+- https://ali-makky.github.io/QKD_BB84/
 ---
 
 ##  Features
