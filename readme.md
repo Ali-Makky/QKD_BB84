@@ -78,13 +78,13 @@ Run QKD_BB84 using the following command:
 ```sh
 ❯ npx vite
 ```
-Open your browser and navigate to http://localhost:<prot-number> to access the simulator.
+Open your browser and navigate to `http://localhost:<prot-number>` to access the simulator.
 
 ---
 
 ##  License
 
-This project is protected under the **MIT** License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/mit/) file.
+This project is under the **MIT** License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/mit/) file.
 
 ---
 
