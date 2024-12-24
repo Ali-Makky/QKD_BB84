@@ -90,6 +90,6 @@ This project is protected under the **MIT** License. For more details, refer to 
 
 ##  Acknowledgments
 
-- List any resources, contributors, inspiration, etc. here.
+- This project draws inspiration from [QuVis](https://www.st-andrews.ac.uk/physics/quvis/simulations_html5/sims/BB84_photons/BB84_photons.html) and includes some enhancements.
 
 ---
