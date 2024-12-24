@@ -1,7 +1,11 @@
+# BB84 QKD Simulation
+
+---
+
 <p align="center">
     <img src="./qkd_bb84.png" align="center" width="50%">
 </p>
-<p align="center"><h1 align="center">QKD BB84 Simulator</h1></p>
+<p align="center"><h3 align="center">Simulator interface</h3></p>
 
 <p align="center">Built with the tools and technologies:</p>
 <p align="center">
